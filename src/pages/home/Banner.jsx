@@ -39,7 +39,7 @@ const Banner = () => {
             <p className="mb-5">
               Discover the latest trends in sustainable fashion
             </p>
-            <Link href="/#" className="flex justify-center gap-2">
+            <Link href="/#" className="flex justify-center">
               <span className="btn btn-md px-6 bg-primary text-white border-0 rounded-full">
                 Shop Now
               </span>
@@ -53,8 +53,8 @@ const Banner = () => {
 
       {/* Stats Section */}
       <div style={{ backgroundImage: "url(/banner_image2.avif)" }}>
-        <div className="bg-primary bg-opacity-40">
-          <div className="container mx-auto flex flex-col gap-8 md:flex-row justify-between p-4">
+        <div className="bg-primary text-white bg-opacity-40">
+          <div className="container mx-auto flex flex-col gap-8 md:flex-row justify-around p-4">
             {heroStats.map((stat, index) => (
               <div key={index} className="flex gap-3 items-center">
                 <span className="text-3xl">{stat.icon}</span>

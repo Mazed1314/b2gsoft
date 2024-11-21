@@ -1,5 +1,6 @@
 import React from "react";
 import Banner from "./Banner";
+import FeaturedProducts from "./FeaturedProducts";
 
 const HomePage = () => {
   return (
@@ -7,6 +8,7 @@ const HomePage = () => {
       {/* banner */}
       <Banner />
       {/* featured product */}
+      <FeaturedProducts />
       {/* discount section */}
       {/* discount section */}
       {/* summer big deal */}

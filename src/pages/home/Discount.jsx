@@ -5,7 +5,7 @@ import { BsArrowUpRight } from "react-icons/bs";
 
 const Discount = () => {
   return (
-    <div className="md:w-10/12 mx-auto my-6">
+    <div className="my-6">
       <div className="bg-violet-100 flex flex-col md:flex-row gap-6 justify-between">
         <div className="p-4 md:p-8 flex flex-col items-center md:items-start gap-3 justify-center">
           <h3 className="text-primary font-Pacifico">Big Deal</h3>
@@ -21,10 +21,10 @@ const Discount = () => {
             </span>
           </Link>
         </div>
-        <div className="">
+        <div className="flex justify-center">
           <Image
-            width={427}
-            height={495}
+            width={425}
+            height={460}
             src={"/cheerful-couple-sunglasses-1024x768-removebg-preview.png"}
             alt="img"
           ></Image>

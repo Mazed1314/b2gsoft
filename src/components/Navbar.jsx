@@ -70,7 +70,7 @@ const Navbar = () => {
               <Image
                 width={150}
                 height={60}
-                src={"/logo.png"}
+                src={"/logo_black.png"}
                 alt="logo"
               ></Image>
             </span>

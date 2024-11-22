@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "./Banner";
 import FeaturedProducts from "./FeaturedProducts";
+import Discount from "./Discount";
 
 const HomePage = () => {
   return (
@@ -10,7 +11,8 @@ const HomePage = () => {
       {/* featured product */}
       <FeaturedProducts />
       {/* discount section */}
-      {/* discount section */}
+      <Discount />
+      {/* male/female collection section */}
       {/* summer big deal */}
     </div>
   );

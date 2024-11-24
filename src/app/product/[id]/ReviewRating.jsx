@@ -1,9 +1,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { HiOutlineThumbUp } from "react-icons/hi";
-import reviews from "../../../../public/reviews.json";
 
-const ReviewRating = () => {
+const ReviewRating = ({ reviews }) => {
   const [filter, setFilter] = useState("all");
 
   const totalReviews = reviews.length;
@@ -33,10 +32,10 @@ const ReviewRating = () => {
         </div>
 
         {/* Review List */}
-        {filteredReviews.map((review, index) => (
+        {filteredReviews.slice(0, 2).map((review, index) => (
           <div
             key={index}
-            className="space-y-3 border-b p-4 bg-base-50 rounded-lg shadow-md"
+            className="space-y-3 border-b p-4 rounded-lg shadow-md"
           >
             <div className="flex gap-4">
               <Image

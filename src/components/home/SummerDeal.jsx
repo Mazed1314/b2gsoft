@@ -36,6 +36,7 @@ const SummerDeal = () => {
                   src={product.img_src}
                   width={280}
                   height={320}
+                  className="w-full h-60"
                 />
               </div>
 

@@ -36,7 +36,7 @@ const Banner = () => {
             <h1 className="mb-5 text-3xl lg:text-5xl font-bold text-white">
               Elevate Your Everyday Style
             </h1>
-            <p className="mb-5">
+            <p className="mb-5 text-gray-50">
               Discover the latest trends in sustainable fashion
             </p>
             <Link href="/#" className="flex justify-center">

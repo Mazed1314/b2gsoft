@@ -26,7 +26,7 @@ const Collection = () => {
               height={400}
               src={item.img_src}
               alt="img"
-              className="absolute bottom-0"
+              className="absolute bottom-0 w-96 h-96"
             ></Image>
           </div>
           <div className="md:w-1/2 justify-center p-4 md:p-8 flex flex-col items-center md:items-start gap-3">

@@ -1,7 +1,7 @@
 [
   {
     "user_name": "JohnDoe",
-    "user_img": "/Screenshot36-removebg-preview.png",
+    "user_img": "/user/360_F_608557356_ELcD2pwQO9pduTRL30umabzgJoQn5fnd.jpg",
     "comment": "This is an amazing product!",
     "like": 15,
     "date": "2024-11-5",
@@ -9,10 +9,74 @@
   },
   {
     "user_name": "JaneSmith",
-    "user_img": "/Screenshot36-removebg-preview.png",
-    "comment": "Very nice.",
+    "user_img": "/user/unnamed.png",
+    "comment": "Very nice and useful.",
     "like": 8,
-    "date": "2024-11-19",
+    "date": "2024-11-20",
+    "rating": 4
+  },
+  {
+    "user_name": "ChrisBrown",
+    "user_img": "/user/ai-generated-professional-portrait-of-a-competent-woman-free-photo.jpg",
+    "comment": "Not what I expected.",
+    "like": 3,
+    "date": "2024-11-18",
+    "rating": 2
+  },
+  {
+    "user_name": "SophiaLee",
+    "user_img": "/Screenshot36-removebg-preview.png",
+    "comment": "Great quality and price!",
+    "like": 22,
+    "date": "2024-11-17",
+    "rating": 5
+  },
+  {
+    "user_name": "MichaelScott",
+    "user_img": "/Screenshot36-removebg-preview.png",
+    "comment": "It's okay, could be better.",
+    "like": 5,
+    "date": "2024-11-16",
+    "rating": 3
+  },
+  {
+    "user_name": "EmmaWilson",
+    "user_img": "/Screenshot36-removebg-preview.png",
+    "comment": "I love this product! Highly recommend.",
+    "like": 30,
+    "date": "2024-11-15",
+    "rating": 5
+  },
+  {
+    "user_name": "OliverTaylor",
+    "user_img": "/Screenshot36-removebg-preview.png",
+    "comment": "Decent product, but not perfect.",
+    "like": 10,
+    "date": "2024-11-14",
+    "rating": 3
+  },
+  {
+    "user_name": "IsabellaMartinez",
+    "user_img": "/Screenshot36-removebg-preview.png",
+    "comment": "Exceeded my expectations!",
+    "like": 25,
+    "date": "2024-11-13",
+    "rating": 5
+  },
+  {
+    "user_name": "JamesAnderson",
+    "user_img": "/Screenshot36-removebg-preview.png",
+    "comment": "Not worth the money.",
+    "like": 2,
+    "date": "2024-11-12",
+    "rating": 1
+  },
+  {
+    "user_name": "EmilyJohnson",
+    "user_img": "/Screenshot36-removebg-preview.png",
+    "comment": "Good product but delivery was late.",
+    "like": 12,
+    "date": "2024-11-11",
     "rating": 4
   }
 ]

@@ -1,9 +1,9 @@
 import React from "react";
 import Banner from "../components/home/Banner";
-import FeaturedProducts from "../components/shared/FeaturedProducts";
 import Discount from "../components/home/Discount";
 import Collection from "../components/home/Collection";
-import SummerDeal from "./home/SummerDeal";
+import SummerDeal from "../components/home/SummerDeal";
+import FeaturedProducts from "@/components/shared/FeaturedProducts";
 
 const HomePage = () => {
   return (

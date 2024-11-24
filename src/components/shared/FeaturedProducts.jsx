@@ -1,11 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
 import featuredProducts from "../../../public/featuredProducts.json";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 
@@ -42,6 +37,7 @@ const FeaturedProducts = ({ title1, title2 }) => {
                   src={product.img_src}
                   width={280}
                   height={320}
+                  className="w-full h-60"
                 />
               </div>
 
@@ -56,7 +52,7 @@ const FeaturedProducts = ({ title1, title2 }) => {
                 href={`/product/${product._id}`}
                 className="w-full border border-primary text-primary rounded-md hover:bg-primary hover:text-white py-2 text-center"
               >
-                Add to Cart
+                View Details
               </Link>
             </div>
           </>

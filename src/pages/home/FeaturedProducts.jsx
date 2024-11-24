@@ -1,83 +1,65 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
+import featuredProducts from "../../../public/featuredProducts.json";
+import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 
-const FeaturedProducts = () => {
-  // Mock product data
-  const featuredProducts = [
-    {
-      _id: "1",
-      price: 99.99,
-      name: "Wireless Headphones",
-      img_src: "/OamuQa43OJH2zaDVR-removebg-preview.png",
-    },
-    {
-      _id: "2",
-      price: 49.99,
-      name: "Bluetooth Speaker",
-      img_src: "/OamuQa43OJH2zaDVR-removebg-preview.png",
-    },
-    {
-      _id: "3",
-      price: 29.99,
-      name: "Portable Charger",
-      img_src: "/OamuQa43OJH2zaDVR-removebg-preview.png",
-    },
-    {
-      _id: "4",
-      price: 19.99,
-      name: "USB-C Cable",
-      img_src: "/OamuQa43OJH2zaDVR-removebg-preview.png",
-    },
-    {
-      _id: "5",
-      price: 149.99,
-      name: "Smartwatch",
-      img_src: "/OamuQa43OJH2zaDVR-removebg-preview.png",
-    },
-  ];
+const FeaturedProducts = ({ f_title }) => {
+  //product data
 
   return (
-    <div>
+    <div className="px-4">
       {/* Section Header */}
-      <div className="flex justify-between my-4">
-        <div>
-          <h2 className="text-primary">FEATURED PRODUCT</h2>
-          <h2 className="font-semibold">New Arrivals</h2>
-        </div>
-        <div className="text-gray-500">Explore more categories</div>
+
+      <div className="my-6">
+        <h2 className="text-primary">FEATURED PRODUCT</h2>
+        <h2 className="font-bold text-3xl">{f_title}</h2>
+      </div>
+      <div className="flex gap-3 justify-end my-6">
+        <button>
+          {" "}
+          <IoIosArrowRoundBack className="text-3xl text-primary rounded-full border border-primary hover:bg-primary hover:text-white" />
+        </button>
+        <button>
+          <IoIosArrowRoundForward className="text-3xl text-primary rounded-full border border-primary hover:bg-primary hover:text-white" />
+        </button>
       </div>
 
-      {/* Product List */}
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex gap-10 overflow-x-scroll">
         {featuredProducts.map((product) => (
-          <div
-            key={product._id}
-            className="w-[320px] rounded-md shadow-md p-4 bg-white flex flex-col gap-4"
-          >
-            {/* Product Image */}
-            <div className="bg-violet-50 rounded-md">
-              <Image
-                alt={product.name}
-                src={product.img_src}
-                width={280}
-                height={320}
-              />
-            </div>
+          <>
+            {/* Product Card */}
+            <div className="min-w-[320px] rounded-md shadow-md p-4 bg-white flex flex-col justify-between gap-4">
+              {/* Product Image */}
+              <div className="bg-violet-50 rounded-md">
+                <Image
+                  alt={product.name}
+                  src={product.img_src}
+                  width={280}
+                  height={320}
+                />
+              </div>
 
-            {/* Product Details */}
-            <div className="flex justify-between text-xs">
-              <span>{product.name}</span>
-              <span className="font-semibold">BDT: {product.price}</span>
-            </div>
+              {/* Product Details */}
+              <div className="flex justify-between text-xs">
+                <span>{product.name}</span>
+                <span className="font-semibold">BDT: {product.price}</span>
+              </div>
 
-            {/* Add to Cart Button */}
-            <Link
-              href={`/product/${product._id}`}
-              className="w-full border border-primary text-primary rounded-md hover:bg-primary hover:text-white py-2 text-center"
-            >
-              Add to Cart
-            </Link>
-          </div>
+              {/* Add to Cart Button */}
+              <Link
+                href={`/product/${product._id}`}
+                className="w-full border border-primary text-primary rounded-md hover:bg-primary hover:text-white py-2 text-center"
+              >
+                Add to Cart
+              </Link>
+            </div>
+          </>
         ))}
       </div>
 

@@ -1,22 +1,26 @@
 "use client";
+
 import FeaturedProducts from "@/components/shared/FeaturedProducts";
 import { useState } from "react";
 import ReviewRating from "./ReviewRating";
 
-const page = ({ params }) => {
+const ProductPage = ({ params }) => {
   const [activeTab, setActiveTab] = useState("Details");
+
   console.log(params.id);
+
   return (
     <div className="md:w-11/12 mx-auto">
-      {/* details / review  section */}
+      {/* Details & Review Section */}
       <div className="my-4 p-2">
+        {/* Tab Navigation */}
         <div role="tablist" className="tabs">
           {/* Details Tab */}
           <input
             type="radio"
-            name="my_tabs_1"
-            role="tab"
+            name="tabs"
             id="details"
+            role="tab"
             className={`tab ${
               activeTab === "Details" ? "text-primary" : "text-black"
             }`}
@@ -30,9 +34,9 @@ const page = ({ params }) => {
           {/* Review & Rating Tab */}
           <input
             type="radio"
-            name="my_tabs_1"
-            role="tab"
+            name="tabs"
             id="review"
+            role="tab"
             className={`tab ${
               activeTab === "Review" ? "text-primary" : "text-black"
             }`}
@@ -47,9 +51,9 @@ const page = ({ params }) => {
           {/* Discussion Tab */}
           <input
             type="radio"
-            name="my_tabs_1"
-            role="tab"
+            name="tabs"
             id="discussion"
+            role="tab"
             className={`tab ${
               activeTab === "Discussion" ? "text-primary" : "text-black"
             }`}
@@ -61,7 +65,8 @@ const page = ({ params }) => {
           </label>
         </div>
       </div>
-      {/* related products section */}
+
+      {/* Related Products Section */}
       <div className="mb-8">
         <FeaturedProducts title2={"Related Products"} />
       </div>
@@ -69,4 +74,4 @@ const page = ({ params }) => {
   );
 };
 
-export default page;
+export default ProductPage;

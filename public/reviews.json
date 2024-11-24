@@ -1,0 +1,18 @@
+[
+  {
+    "user_name": "JohnDoe",
+    "user_img": "/Screenshot36-removebg-preview.png",
+    "comment": "This is an amazing product!",
+    "like": 15,
+    "date": "2024-11-5",
+    "rating": 5
+  },
+  {
+    "user_name": "JaneSmith",
+    "user_img": "/Screenshot36-removebg-preview.png",
+    "comment": "Very nice.",
+    "like": 8,
+    "date": "2024-11-19",
+    "rating": 4
+  }
+]

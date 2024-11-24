@@ -1,161 +1,119 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { HiOutlineThumbUp } from "react-icons/hi";
+import reviews from "../../../../public/reviews.json";
 
 const ReviewRating = () => {
+  const [filter, setFilter] = useState("all");
+
+  const totalReviews = reviews.length;
+  const averageRating =
+    reviews.reduce((sum, item) => sum + item.rating, 0) / totalReviews;
+
+  const filteredReviews =
+    filter === "new"
+      ? [...reviews].sort((a, b) => new Date(b.date) - new Date(a.date))
+      : reviews;
+
   return (
-    <div className="flex flex-col-reverse lg:flex-row gap-4">
-      {/* public review */}
+    <div className="flex flex-col-reverse lg:flex-row gap-8">
+      {/* Reviews Section */}
       <div className="lg:w-8/12">
-        {/* filtering */}
-        <div className="mb-4">
+        {/* Filter Dropdown */}
+        <div className="mb-6">
           <select
-            name="type"
-            value={"filter"}
+            name="filter"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
             className="border p-2 rounded-md"
           >
-            <option value="all">All</option>
-            <option value="new">Newest</option>
+            <option value="all">All Reviews</option>
+            <option value="new">Newest First</option>
           </select>
         </div>
-        {/* review */}
-        <div className="space-y-3 border-b p-2">
-          <div className="flex space-x-4">
-            <Image
-              width={48}
-              height={48}
-              src="/fashion-for-men-removebg-preview.png"
-              alt="img"
-              className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
-            ></Image>
-            <div>
-              <div className="flex gap-2">
-                <h4 className="font-bold">Leroy Jenkins</h4>
-                <span className="text-xs mt-1">2 days ago</span>
-              </div>
-              <div className="rating rating-md">
-                <input
-                  type="radio"
-                  name="rating-7"
-                  className="mask mask-star-2 bg-yellow-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-7"
-                  className="mask mask-star-2 bg-yellow-400"
-                  defaultChecked
-                />
-                <input
-                  type="radio"
-                  name="rating-7"
-                  className="mask mask-star-2 bg-yellow-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-7"
-                  className="mask mask-star-2 bg-yellow-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-7"
-                  className="mask mask-star-2 bg-yellow-400"
-                />
+
+        {/* Review List */}
+        {filteredReviews.map((review, index) => (
+          <div
+            key={index}
+            className="space-y-3 border-b p-4 bg-base-50 rounded-lg shadow-md"
+          >
+            <div className="flex gap-4">
+              <Image
+                src={review.user_img}
+                alt={`${review.user_name}'s avatar`}
+                width={48}
+                height={48}
+                className="object-cover w-12 h-12 rounded-full border"
+              />
+              <div>
+                <div className="flex gap-2 items-center">
+                  <h4 className="font-bold">{review.user_name}</h4>
+                  <span className="text-xs text-gray-500">
+                    {new Date(review.date).toLocaleDateString()}
+                  </span>
+                </div>
+                <div className="rating flex gap-1">
+                  {Array.from({ length: 5 }).map((idx) => (
+                    <>
+                      <input
+                        type="radio"
+                        name="rating-7"
+                        className="mask mask-star-2 bg-yellow-400"
+                      />
+                    </>
+                  ))}
+                </div>
               </div>
             </div>
+            <p className="text-gray-600 px-2">{review.comment}</p>
+            <div className="flex items-center gap-1 text-gray-700">
+              <HiOutlineThumbUp className="text-xl" />
+              <span>{review.like}</span>
+            </div>
           </div>
-          <p className="text-gray-600 px-2">Very nice</p>
-          <p className="flex gap-1">
-            <HiOutlineThumbUp className="text-xl" />
-            <span>10</span>
-          </p>
-        </div>
+        ))}
       </div>
-      {/* ratings */}
-      <div className="lg:w-4/12 space-y-3">
-        <div className="flex gap-2">
-          <h2>Product Review</h2>
-          <span className="text-gray-600">121 reviews</span>
-        </div>
-        <div className="flex gap-5 justify-between my-4">
-          <div className="rating rating-md">
-            <input
-              type="radio"
-              name="rating-7"
-              className="mask mask-star-2 bg-yellow-400"
-            />
-            <input
-              type="radio"
-              name="rating-7"
-              className="mask mask-star-2 bg-yellow-400"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="rating-7"
-              className="mask mask-star-2 bg-yellow-400"
-            />
-            <input
-              type="radio"
-              name="rating-7"
-              className="mask mask-star-2 bg-yellow-400"
-            />
-            <input
-              type="radio"
-              name="rating-7"
-              className="mask mask-star-2 bg-yellow-400"
-            />
-          </div>
-          <span>(4.0)</span>
-        </div>
-        <div className="divider"></div>
 
-        <div>
-          <p>
-            <span>5</span>{" "}
-            <progress
-              className="progress progress-warning w-56"
-              value={45}
-              max="100"
-            ></progress>
-            <span> 50</span>
-          </p>
-          <p>
-            <span>4</span>{" "}
-            <progress
-              className="progress progress-warning w-56"
-              value={55}
-              max="100"
-            ></progress>
-            <span> 60</span>
-          </p>
-          <p>
-            <span>3</span>{" "}
-            <progress
-              className="progress progress-warning w-56"
-              value={33}
-              max="100"
-            ></progress>
-            <span> 22</span>
-          </p>
-          <p>
-            <span>2</span>{" "}
-            <progress
-              className="progress progress-warning w-56"
-              value={22}
-              max="100"
-            ></progress>
-            <span> 12</span>
-          </p>
-          <p>
-            <span>1</span>{" "}
-            <progress
-              className="progress progress-warning w-56"
-              value={10}
-              max="100"
-            ></progress>
-            <span> 2</span>
-          </p>
+      {/* Rating Summary Section */}
+      <div className="lg:w-4/12 space-y-6">
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl font-semibold">Product Review</h2>
+          <span className="text-gray-500">{totalReviews} reviews</span>
         </div>
+        <div className="flex items-center justify-between gap-4">
+          <div className="rating flex gap-1">
+            {Array.from({ length: 5 }).map((idx) => (
+              <>
+                <input
+                  type="radio"
+                  name="rating-7"
+                  className="mask mask-star-2 bg-yellow-400"
+                />
+              </>
+            ))}
+          </div>
+          <span>({averageRating.toFixed(1)})</span>
+        </div>
+        <div className="divider" />
+
+        {/* Ratings Breakdown */}
+        {[5, 4, 3, 2, 1].map((star) => {
+          const count = reviews.filter((r) => r.rating === star).length;
+          const percentage = (count / totalReviews) * 100;
+
+          return (
+            <div key={star} className="flex items-center gap-4">
+              <span className="w-4 text-sm">{star}</span>
+              <progress
+                className="progress progress-warning w-full"
+                value={percentage}
+                max="100"
+              />
+              <span className="text-sm">{count}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import featuredProducts from "../../../public/featuredProducts.json";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 
-const FeaturedProducts = ({ f_title }) => {
+const FeaturedProducts = ({ title1, title2 }) => {
   //product data
 
   return (
@@ -17,8 +17,8 @@ const FeaturedProducts = ({ f_title }) => {
       {/* Section Header */}
 
       <div className="my-6">
-        <h2 className="text-primary">FEATURED PRODUCT</h2>
-        <h2 className="font-bold text-3xl">{f_title}</h2>
+        <h2 className="text-primary">{title1}</h2>
+        <h2 className="font-bold text-3xl">{title2}</h2>
       </div>
       <div className="flex gap-3 justify-end my-6">
         <button>

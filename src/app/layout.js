@@ -2,7 +2,18 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import { Manrope, Pacifico } from "@next/font/google";
 
+const manrope = Manrope({
+  subsets: ["latin"], // Use subsets as needed
+  variable: "--font-manrope", // Define a CSS variable for Manrope
+});
+
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  weight: "400", // Specify weight
+  variable: "--font-pacifico", // Define a CSS variable for Pacifico
+});
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -22,7 +33,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-sky-50 text-black`}>
+      <body
+        className={`bg-sky-50 text-black ${manrope.variable} ${pacifico.variable} font-sans`}
+      >
         {/* navbar */}
         <Navbar />
 

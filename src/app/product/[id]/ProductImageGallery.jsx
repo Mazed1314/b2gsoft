@@ -7,9 +7,9 @@ const ProductImageGallery = ({ images }) => {
   const [activeImage, setActiveImage] = useState(images[0]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col gap-6">
       {/* Main Image with Zoom */}
-      <div className="w-full max-w-lg mb-6">
+      <div className="w-full max-w-lg flex justify-center lg:justify-start">
         <Zoom>
           <Image
             width={200}
@@ -21,9 +21,9 @@ const ProductImageGallery = ({ images }) => {
         </Zoom>
       </div>
       {/* Other image */}
-      <div className="flex gap-8 justify-start">
+      <div className="flex gap-8 overflow-x-scroll">
         {images.map((image, index) => (
-          <div key={index} className="">
+          <div key={index}>
             <Image
               width={200}
               height={200}

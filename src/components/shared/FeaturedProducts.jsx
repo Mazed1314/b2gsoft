@@ -1,71 +1,56 @@
+"use client";
+
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import featuredProducts from "../../../public/featuredProducts.json";
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import ProductCard from "./ProductCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const FeaturedProducts = ({ title1, title2 }) => {
-  //product data
-
   return (
-    <div className="px-4">
+    <section className="w-full p-2 mt-8 mb-12">
       {/* Section Header */}
+      <header className="text-start my-6">
+        <h2 className="text-primary text-xl">{title1}</h2>
+        <h3 className="text-3xl font-bold">{title2}</h3>
+      </header>
 
-      <div className="my-6">
-        <h2 className="text-primary">{title1}</h2>
-        <h2 className="font-bold text-3xl">{title2}</h2>
-      </div>
-      <div className="flex gap-3 justify-end my-6">
-        <button>
-          {" "}
-          <IoIosArrowRoundBack className="text-3xl text-primary rounded-full border border-primary hover:bg-primary hover:text-white" />
-        </button>
-        <button>
-          <IoIosArrowRoundForward className="text-3xl text-primary rounded-full border border-primary hover:bg-primary hover:text-white" />
-        </button>
-      </div>
+      {/* Carousel */}
+      <Carousel
+        plugins={[Autoplay({ delay: 3000, stopOnInteraction: false })]}
+        opts={{ align: "start", loop: true }}
+        className="relative"
+      >
+        {/* Navigation Controls */}
+        <div className="flex justify-end gap-2 mb-4 absolute -top-8 right-12 z-10">
+          <CarouselPrevious className="text-3xl text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition-colors duration-300" />
+          <CarouselNext className="text-3xl mr-6 text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition-colors duration-300" />
+        </div>
 
-      <div className="flex gap-10 overflow-x-scroll">
-        {featuredProducts.map((product) => (
-          <>
-            {/* Product Card */}
-            <div className="min-w-[320px] rounded-md shadow-md p-4 bg-white flex flex-col justify-between gap-4">
-              {/* Product Image */}
-              <div className="bg-violet-50 rounded-md">
-                <Image
-                  alt={product.name}
-                  src={product.img_src}
-                  width={280}
-                  height={320}
-                  className="w-full h-60"
-                />
-              </div>
-
-              {/* Product Details */}
-              <div className="flex justify-between text-xs">
-                <span>{product.name}</span>
-                <span className="font-semibold">BDT: {product.price}</span>
-              </div>
-
-              {/* Add to Cart Button */}
-              <Link
-                href={`/product/${product._id}`}
-                className="w-full border border-primary text-primary rounded-md hover:bg-primary hover:text-white py-2 text-center"
-              >
-                View Details
-              </Link>
-            </div>
-          </>
-        ))}
-      </div>
+        {/* Carousel Content */}
+        <CarouselContent>
+          {featuredProducts.map((product, index) => (
+            <CarouselItem
+              key={index}
+              className="md:basis-1/2 lg:basis-1/3 px-2"
+            >
+              <ProductCard product={product} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
 
       {/* See More Button */}
-      <div className="flex justify-center mt-4">
-        <button className="btn btn-sm bg-primary text-white hover:bg-white hover:text-primary">
-          See more
-        </button>
+      <div className="flex justify-center mt-6">
+        <button className="btn btn-primary btn-sm">See More</button>
       </div>
-    </div>
+    </section>
   );
 };
 

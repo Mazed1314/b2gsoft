@@ -14,9 +14,9 @@ const ProductInfo = ({ product }) => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   return (
-    <div className="flex flex-col lg:flex-row my-4 p-4">
+    <div className="flex flex-col gap-4 lg:flex-row my-4 p-4">
       {/* Shopping Bag Indicator */}
-      <div className="absolute right-0 top-40 text-center bg-primary text-white p-3 rounded-l-xl">
+      <div className="absolute hidden md:block right-0 top-40 text-center bg-primary text-white p-3 rounded-l-xl">
         <IoBagOutline className="text-2xl" />
         <span>Your Bag: 0</span>
       </div>

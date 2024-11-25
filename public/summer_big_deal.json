@@ -2,55 +2,55 @@
   {
     "_id": "1",
     "price": 99.99,
-    "name": "Wireless Headphones",
-    "img_src": "/Screenshot36-removebg-preview.png"
+    "name": "Shirt",
+    "img_src": "/summer_deal_image/buy-sarees-online.webp"
   },
   {
     "_id": "2",
     "price": 49.99,
-    "name": "Bluetooth Speaker",
-    "img_src": "/Screenshot36-removebg-preview.png"
+    "name": "Frock",
+    "img_src": "/summer_deal_image/IMG_7782_800x.webp"
   },
   {
     "_id": "3",
     "price": 29.99,
-    "name": "Portable Charger",
-    "img_src": "/Screenshot36-removebg-preview.png"
+    "name": "Coat",
+    "img_src": "/summer_deal_image/trendy-top-design-mockup-presented-wooden-hanger_460848-13969.avif"
   },
   {
     "_id": "4",
     "price": 19.99,
-    "name": "USB-C Cable",
-    "img_src": "/Screenshot36-removebg-preview.png"
+    "name": "T-shirt",
+    "img_src": "/summer_deal_image/Custom-made-T-Shirts-35.jpg"
   },
   {
     "_id": "5",
     "price": 149.99,
-    "name": "Smartwatch",
-    "img_src": "/Screenshot36-removebg-preview.png"
+    "name": "Blazer",
+    "img_src": "/summer_deal_image/1_msb-1087-r-57-maroon_1.webp"
   },
   {
     "_id": "6",
     "price": 149.99,
-    "name": "Smartwatch",
-    "img_src": "/Screenshot36-removebg-preview.png"
+    "name": "Jacket",
+    "img_src": "/summer_deal_image/0S3A3053-scaled-760x950.jpg"
   },
   {
     "_id": "7",
     "price": 149.99,
-    "name": "Smartwatch",
-    "img_src": "/Screenshot36-removebg-preview.png"
+    "name": "Sweater",
+    "img_src": "/summer_deal_image/Product-Image-1700995621.jpg"
   },
   {
     "_id": "8",
     "price": 149.99,
-    "name": "Smartwatch",
-    "img_src": "/Screenshot36-removebg-preview.png"
+    "name": "Kurta",
+    "img_src": "/summer_deal_image/LBlue_3_c09b843536.webp"
   },
   {
     "_id": "9",
     "price": 149.99,
-    "name": "Smartwatch",
-    "img_src": "/Screenshot36-removebg-preview.png"
+    "name": "Gown",
+    "img_src": "/summer_deal_image/02069aad929grown0.jpg"
   }
 ]

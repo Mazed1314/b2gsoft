@@ -1,18 +1,27 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Technology 🛠️
 
-First, run the development server:
+- Daisy Ui
+- Tailwind CSS
+- tailwindcss-animate
+- Shadcn Ui
+- react-medium-image-zoom
+- react-icons
+- lucide-react
+- embla-carousel-react
+- clsx
+- next-font
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
+
+## Installation
+
+1. Open git bash/cmd in your directory
+2. Clone this repository
+3. cd aves-digital
+4. npm install
+5. run the project (npm run dev)
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

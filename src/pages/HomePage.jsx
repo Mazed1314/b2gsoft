@@ -10,7 +10,7 @@ const HomePage = () => {
     <div>
       {/* banner */}
       <Banner />
-      <div className="md:w-10/12 mx-auto">
+      <div className="md:w-11/12 mx-auto">
         {/* featured product */}
         <FeaturedProducts title1={"FEATURED PRODUCT"} title2={"New Arrivals"} />
         {/* discount section */}
@@ -18,7 +18,7 @@ const HomePage = () => {
         {/* male/female collection section */}
         <Collection />
         {/* summer big deal */}
-        <SummerDeal />
+        <SummerDeal title1={"SUMMER"} title2={"Big Deal"} />
       </div>
     </div>
   );

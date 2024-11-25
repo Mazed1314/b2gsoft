@@ -39,7 +39,7 @@ const Banner = () => {
             <p className="mb-5 text-gray-50">
               Discover the latest trends in sustainable fashion
             </p>
-            <Link href="/#" className="flex justify-center">
+            <Link href="/#" className="flex justify-center gap-1">
               <span className="btn btn-md px-6 bg-primary text-white border-0 rounded-full">
                 Shop Now
               </span>

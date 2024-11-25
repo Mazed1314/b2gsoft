@@ -1,103 +1,54 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 import summer_big_deal from "../../../public/summer_big_deal.json";
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
+import SummerProductCard from "../shared/SummerProductCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
-const SummerDeal = () => {
+const SummerDeal = ({ title1, title2 }) => {
   return (
-    <div className="px-4">
-      <div className="my-6">
-        <h2 className="text-lg text-primary">SUMMER</h2>
-        <h2 className="font-bold text-3xl">Big Deal</h2>
-      </div>
+    <section className="w-full p-2 my-8">
+      {/* Section Header */}
+      <header className="text-start my-6">
+        <h2 className="text-primary text-xl">{title1}</h2>
+        <h3 className="text-3xl font-bold">{title2}</h3>
+      </header>
 
-      <div className="flex gap-3 justify-end my-6">
-        <button>
-          {" "}
-          <IoIosArrowRoundBack className="text-3xl text-primary rounded-full border border-primary hover:bg-primary hover:text-white" />
-        </button>
-        <button>
-          <IoIosArrowRoundForward className="text-3xl text-primary rounded-full border border-primary hover:bg-primary hover:text-white" />
-        </button>
-      </div>
+      {/* Carousel */}
+      <Carousel
+        plugins={[Autoplay({ delay: 3000, stopOnInteraction: false })]}
+        opts={{ align: "start", loop: true }}
+        className="relative"
+      >
+        {/* Navigation Controls */}
+        <div className="flex justify-end gap-2 mb-4 absolute -top-8 right-12 z-10">
+          <CarouselPrevious className="text-3xl text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition-colors duration-300" />
+          <CarouselNext className="text-3xl mr-6 text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition-colors duration-300" />
+        </div>
 
-      <div className="flex gap-10 overflow-x-scroll">
-        {summer_big_deal.map((product, index) => (
-          <>
-            <div className="min-w-[320px] relative rounded-md shadow-md p-2 bg-white flex flex-col justify-between gap-4">
-              <span className="bg-primary p-3 text-center rounded-b-full w-12 text-white absolute top-0 right-2">
-                UP To 40%
-              </span>
-
-              {/* Product Image */}
-              <div className="bg-violet-50 rounded-md">
-                <Image
-                  alt={product.name}
-                  src={product.img_src}
-                  width={280}
-                  height={320}
-                  className="w-full h-60"
-                />
-              </div>
-
-              {/* rating */}
-              <div className="flex gap-2">
-                <div className="rating">
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                    defaultChecked
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                </div>
-                <span>(30)</span>
-              </div>
-
-              {/* Product Details */}
-              <div className="flex justify-between text-xs">
-                <span>{product.name}</span>
-                <span className="font-semibold">BDT: {product.price}</span>
-              </div>
-
-              {/* Add to Cart Button */}
-              <Link
-                href={`/product/${product._id}`}
-                className="w-full border border-primary text-primary rounded-md hover:bg-primary hover:text-white py-2 text-center"
-              >
-                Add to Cart
-              </Link>
-            </div>
-          </>
-        ))}
-      </div>
+        {/* Carousel Content */}
+        <CarouselContent>
+          {summer_big_deal.map((product, index) => (
+            <CarouselItem
+              key={index}
+              className="md:basis-1/2 lg:basis-1/3 px-2"
+            >
+              <SummerProductCard product={product} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
 
       {/* See More Button */}
-      <div className="flex justify-center my-6">
-        <button className="btn btn-sm bg-primary text-white hover:bg-white hover:text-primary">
-          See more
-        </button>
+      <div className="flex justify-center mt-6">
+        <button className="btn btn-primary btn-sm">See More</button>
       </div>
-    </div>
+    </section>
   );
 };
 
